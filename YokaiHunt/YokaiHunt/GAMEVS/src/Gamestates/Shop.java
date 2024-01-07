@@ -119,6 +119,7 @@ public class Shop implements Statemethod,ActionListener {
                 }
         }
         if (e.getSource() == slots.get(5)){
+            itemList.clear();
             Gamestate.state = Gamestate.MAP;
             for (JButton jButton : slots) {
                 panel.remove(jButton);
