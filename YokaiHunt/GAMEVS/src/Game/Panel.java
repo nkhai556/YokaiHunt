@@ -11,6 +11,7 @@ import Map.*;
 import Gamestates.Gamestate;
 import Gamestates.MapPick;
 import Gamestates.GameOver;
+import Gamestates.GameWin;
 import Gamestates.Menu;
 import Gamestates.Shop;
 
@@ -25,6 +26,7 @@ public class Panel extends JPanel {
     int ydel = 0;
 
     private GameOver over;
+    private GameWin win;
     private Menu menu;
     private Shop shop;
     private Player player;
@@ -46,6 +48,7 @@ public class Panel extends JPanel {
         new Texture();
 
         this.over = new GameOver(this);
+        this.win = new GameWin(this);
         this.menu = new Menu(this);
         
         this.bg = new BG(this);
@@ -73,7 +76,7 @@ public class Panel extends JPanel {
 
     public void update() {
 
-        if(Gamestate.state == Gamestate.PLAYING){
+        if(Gamestate.state == Gamestate.PLAYING || Gamestate.state == Gamestate.BOSS){
             this.requestFocus();
             tick ++;
             bg.update();
@@ -90,7 +93,7 @@ public class Panel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g); 
-        if(Gamestate.state == Gamestate.PLAYING){
+        if(Gamestate.state == Gamestate.PLAYING || Gamestate.state == Gamestate.BOSS){
             bg.render(g);
             spawn.render(g);
             player.render(g);
@@ -109,6 +112,9 @@ public class Panel extends JPanel {
         else if (Gamestate.state == Gamestate.SHOP){
             shop.setShop();
             shop.draw(g);
+        }
+        else if (Gamestate.state == Gamestate.WIN){
+            win.draw(g);
         }
     }
 
@@ -142,7 +148,7 @@ public class Panel extends JPanel {
         player.setY(this.getHeight()/2-tilesize);
         spawn.resetEnemy();
         map.mapReset();
-
+        
         Gamestate.state = Gamestate.PLAYING;
     }
 }

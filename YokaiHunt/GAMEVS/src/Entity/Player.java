@@ -176,6 +176,7 @@ public class Player {
         for (int i = 0; i< bag.size(); i++){
             bag.get(i).FX(this);
         }
+        bag.clear();
     }
 
     //remove bullet out of list to make it disappear
@@ -213,13 +214,13 @@ public class Player {
     public int getDmg() {
         return dmg;
     }
-    public void setDmg(int hP) {
-        HP = dmg;
+    public void setDmg(int dmg) {
+        this.dmg = dmg;
     }
     public int getCD() {
-        return dmg;
+        return cd;
     }
-    public void setCD(int hP) {
-        HP = dmg;
+    public void setCD(int cd) {
+        this.cd = cd;
     }
 }

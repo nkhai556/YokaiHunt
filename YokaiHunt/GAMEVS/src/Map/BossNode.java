@@ -21,8 +21,9 @@ public class BossNode extends MapNodes{
     public void function (){
         planMaking();
         EM.setPlan(spawnPlan);
+        EM.resetBullet();
         if (Gamestate.state != Gamestate.MENU){
-            Gamestate.state = Gamestate.PLAYING;
+            Gamestate.state = Gamestate.BOSS;
         }
     }
     
