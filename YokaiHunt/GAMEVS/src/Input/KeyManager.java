@@ -69,7 +69,7 @@ public class KeyManager  {
         @Override
         public void actionPerformed(ActionEvent e) {
             leftPressed = true;
-            System.out.println("pressed");
+            
         }}
 
     private class RightPressed extends AbstractAction{
@@ -126,6 +126,7 @@ public class KeyManager  {
         @Override
         public void actionPerformed(ActionEvent e) {
             shootPressed = true;
+            System.out.println("pressed");
         }}
 
     private class ShootReleased extends AbstractAction{

@@ -29,7 +29,11 @@ public class EnemyManager {
 
     public void update() {
         if (plan.isEmpty() == true && enemies.isEmpty() == true){
-            Gamestate.state = Gamestate.MAP;
+            if (Gamestate.state == Gamestate.BOSS){
+                Gamestate.state = Gamestate.WIN;
+            }
+            else
+                Gamestate.state = Gamestate.MAP;
         }
         if (rand.nextInt((200 - 0) + 1) + 0 <= 2) {
             addEnemies();
@@ -112,6 +116,9 @@ public class EnemyManager {
     }
     public void resetEnemy(){
         enemies.clear();
+        bulletList.clear();
+    }
+    public void resetBullet(){
         bulletList.clear();
     }
 

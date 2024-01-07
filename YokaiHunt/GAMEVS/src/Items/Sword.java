@@ -9,6 +9,6 @@ public class Sword extends Item {
     }
 
     public void FC (Player player){
-        player.setDmg(player.getDmg() + 1);
+        player.setDmg(player.getDmg() + 2);
     }
 }

@@ -9,6 +9,6 @@ public class Talisman extends Item{
     }
     
     public void FX (Player player){
-        player.setCD( player.getCD() -1);
+        player.setCD( player.getCD() - 1);
     }
 }
