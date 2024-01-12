@@ -28,7 +28,7 @@ public class FightNode extends MapNodes{
     }
     
     private void planMaking (){
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 35; i++)
         spawnPlan.add(R.nextInt((4 - 0) + 1) + 0);
     } 
     
